@@ -2,15 +2,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int tabla[] = new int[10];
+        int lista[] = new int[15];
         int sust;
         int busca;
         boolean encontrado = false;
         Scanner lector = new Scanner(System.in);
 
-        System.out.println("Ingrese 10 valores cualesquiera:");
-        for (int i = 0; i < tabla.length; i++) {
-            tabla[i] = lector.nextInt();
+        System.out.println("Ingrese 15 valores cualesquiera:");
+        for (int i = 0; i < lista.length; i++) {
+            lista[i] = lector.nextInt();
         }
 
         int j = 1;
@@ -19,11 +19,11 @@ public class Main {
         while(intercambio){
             j=1;
             intercambio=false;
-            while (j < tabla.length) {
-                if (tabla[j - 1] > tabla[j]) {
-                    sust = tabla[j];
-                    tabla[j] = tabla[j - 1];
-                    tabla[j - 1] = sust;
+            while (j < lista.length) {
+                if (lista[j - 1] > lista[j]) {
+                    sust = lista[j];
+                    lista[j] = lista[j - 1];
+                    lista[j - 1] = sust;
                     intercambio=true;
                 }
                 j++;
@@ -34,9 +34,9 @@ public class Main {
             }*/
         }
 
-        System.out.println("tabla ordenado:");
-        for (int i = 0; i < tabla.length; i++) {
-            System.out.print(tabla[i] + " ");
+        System.out.println("Lista ordenada:");
+        for (int i = 0; i < lista.length; i++) {
+            System.out.print(lista[i] + " ");
         }
 
         System.out.println("\nIntroduce el valor a buscar:");
@@ -44,8 +44,8 @@ public class Main {
         // No se utiliza más el lector
         lector.close();
 
-        for (int i = 0; i < tabla.length; i++) {
-            if (tabla[i] == busca) {
+        for (int i = 0; i < lista.length; i++) {
+            if (lista[i] == busca) {
                 System.out.println("El valor \"" + busca + "\" está en la posición: " + i+1);
                 encontrado = true;
                 break;
